@@ -24,3 +24,17 @@ def move():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+@app.route('/ai_move', methods=['POST'])
+def ai_move():
+    data = request.json
+    board = data['board']
+    ai_player = SmartComputerPlayer('O')
+    move = ai_player.get_move(TicTacToe(board))
+    
+    if t.make_move(move, 'O'):
+        if t.current_winner:
+            return jsonify({"move": move, "winner": 'O'})
+        else:
+            return jsonify({"move": move, "status": "continue"})
+    return jsonify({"status": "invalid"})
