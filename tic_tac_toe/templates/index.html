@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANATED's Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome KANATED's to Tic-Tac-Toe</h1>
+        <p>Choose your opponent and start playing!</p>
+        <div class="buttons">
+            <button id="human-vs-human">Play Human vs Human</button>
+            <button id="human-vs-ai">Play Human vs AI</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
